@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :photos, only: [:index, :show, :new, :create, :destroy]
-  root 'photos#index'
+  resources :static_pages, only: [:index]
+  root 'static_pages#home'
 end
