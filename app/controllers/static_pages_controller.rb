@@ -13,7 +13,7 @@ class StaticPagesController < ApplicationController
 
   private
     def popular_photos(user_id, count = 10)
-        flickr.photos.getPopular(user_id: user_id,per_page: count)
+        flickr.people.getPhotos(user_id: user_id,per_page: count)
     end
     def user_name
 
@@ -26,5 +26,5 @@ class StaticPagesController < ApplicationController
       render 'static_pages/index', photos: @photos
     rescue StandardError
       render 'static_pages/unavailable'
-    end  
+    end
 end
